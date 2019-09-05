@@ -167,12 +167,10 @@ public class EventUserServices implements EventUserDAO {
 	{
 		GroupServices groupServices = new GroupServices();
 		Group foundGroup = groupServices.getGroupById(pId);
-		//System.out.println(foundGroup != null ? "good" : "bad");
 		boolean updateSuccess = false;
 		
 		if(foundGroup != null)
 		{
-			//System.out.println("Trying to add");
 			List<Group> groupList = user.getGroupList();
 			groupList.add(foundGroup);
 			user.setGroupList(groupList);
@@ -187,22 +185,14 @@ public class EventUserServices implements EventUserDAO {
 	{
 		GroupServices groupServices = new GroupServices();
 		Group foundGroup = groupServices.getGroupById(pId);
-		//System.out.println(foundGroup != null ? "good" : "bad");
 		boolean updateSuccess = false;
 
 		if(foundGroup != null)
 		{
-			//System.out.println("Trying to remove");
 			List<Group> groupList = user.getGroupList();
-			//int index = groupList.indexOf(foundGroup);
-			//System.out.println(index);
-			//System.out.println(foundGroup);
-			//System.out.println(groupList.size());
 			boolean removeSuccess = groupList.remove(foundGroup);
-			//System.out.println(removeSuccess);
 			user.setGroupList(groupList);
 			updateSuccess = updateEventUser(user) && removeSuccess;
-			//System.out.println(updateSuccess);
 		}
 		
 		return updateSuccess;

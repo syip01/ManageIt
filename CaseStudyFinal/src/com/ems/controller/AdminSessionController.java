@@ -466,12 +466,4 @@ public class AdminSessionController {
 		
 		return mav;
 	}
-	
-	@InitBinder
-	public void initBinder(WebDataBinder binder)
-	{
-		// not used for reasons
-		//binder.setDisallowedFields(new String[] {"lastName"});
-		//binder.setAllowedFields(new String[] {"firstName"});
-	}
 }

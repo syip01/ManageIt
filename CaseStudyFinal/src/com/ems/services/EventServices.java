@@ -72,21 +72,9 @@ public class EventServices implements EventDAO {
 			foundGroup = entityManager.find(Group.class, event.getGroup().getId());
 			foundAdmin = entityManager.find(EventAdmin.class, event.getAdmin().getId()); 
 			
-			//System.out.println("Tried to find stuff");
-			
-			//if (foundRoom == null || foundGroup == null)
-			//	throw new NullPointerException();
-			
-			//System.out.println("No nulls");
-			
-			//System.out.println(foundRoom);
-			//System.out.println(foundGroup);
-			//System.out.println(foundAdmin);
-
 			event.setRoom(foundRoom);
 			event.setGroup(foundGroup);
 			event.setAdmin(foundAdmin);
-			//System.out.println(event);
 
 			entityManager.getTransaction().begin();			
 			entityManager.persist(event);
@@ -139,9 +127,6 @@ public class EventServices implements EventDAO {
 			foundGroup = entityManager.find(Group.class, event.getGroup().getId());
 			foundAdmin = entityManager.find(EventAdmin.class, event.getAdmin().getId()); 
 
-			//if (foundEvent == null || foundRoom == null || foundGroup == null)
-			//	throw new NullPointerException();
-
 			foundEvent.setStartTime(event.getStartTime());
 			foundEvent.setEndTime(event.getEndTime());
 			foundEvent.setStatus(event.getStatus());
@@ -168,7 +153,6 @@ public class EventServices implements EventDAO {
 			
 			foundEvent.setRoom(foundRoom);
 			foundEvent.setGroup(foundGroup);
-			//entityManager.persist(event);
 			entityManager.getTransaction().commit();
 		}
 		finally

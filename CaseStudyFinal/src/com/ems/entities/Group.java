@@ -10,7 +10,6 @@ import java.util.*;
 @NamedQueries ({
 @NamedQuery (query="SELECT g FROM Group g", name="queryAllGroups"),
 @NamedQuery (query="SELECT g FROM Group g where g.name=:name", name="queryGroup"),
-//@NamedQuery (query="SELECT DISTINCT g FROM Group g JOIN g.userList u WHERE u.id = :id ", name="queryAllGroupsByUserId"),
 })
 public class Group {
 	@Transient

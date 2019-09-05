@@ -11,7 +11,6 @@ import java.time.*;
 @NamedQueries ({
 @NamedQuery (query="SELECT e FROM Event e ORDER BY e.id", name="queryAllEvents"),
 @NamedQuery (query="SELECT e FROM Event e WHERE e.group.id=:id ORDER BY e.id", name="queryAllEventsByGroupId"),
-//@NamedQuery (query="SELECT DISTINCT g FROM Group g JOIN g.userList u WHERE u.id = :id ", name="queryAllGroupsByUserId"),
 })
 public class Event {
 	@Transient
@@ -55,8 +54,6 @@ public class Event {
 	public Event()
 	{
 		this(DEFAULT_ID, new Group(), new Room(), new EventAdmin(), LocalDateTime.now(), LocalDateTime.now(), 0);
-		//this(DEFAULT_ID, new Group(), new Room(), new EventAdmin(), new LocalDateTime(System.currentTimeMillis()), new LocalDateTime(System.currentTimeMillis()), 0);
-		
 	}
 	
 	public Event(int id, Group group, Room room, EventAdmin admin, LocalDateTime startTime, LocalDateTime endTime, int status) {
@@ -170,15 +167,4 @@ public class Event {
 		}		
 		return false;
 	}
-
-	// print out message about event
-	/*
-	@Override
-	public String toString()
-	{
-		return("ID: " + id + "\tGroup Name: " + group.getName() + "\tRoom Name: " + room.getName() + "\tLocation: " + room.getLocation()
-				+ "\nStart Time: " + (startTime != null ? startTime : "UNKNOWN")
-				+ "\t End Time: " + (endTime != null ? endTime : "UNKNOWN"));
-	}
-	*/
 }

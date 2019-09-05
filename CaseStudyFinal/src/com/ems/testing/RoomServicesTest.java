@@ -88,8 +88,6 @@ public class RoomServicesTest {
 		List<Room> actualList = roomServices.getAllRooms();
 		// get all data in JUnit test
 
-		//List<Room> expectedList = new ArrayList<Room>(Arrays.asList(roomList));
-		//List<Room> expectedList = (List<Room>) params();
 		List<Room> expectedList = new ArrayList<Room>();
 		expectedList.addAll(params());
 		
@@ -99,7 +97,6 @@ public class RoomServicesTest {
 		System.out.println(actualList);
 		
 		// see if JUnit test value is in room list
-		//assertTrue(expectedList.contains(actualList) && expectedList.size() == actualList.size());
 		assertTrue(actualList.contains(expected));
 	}
 	
