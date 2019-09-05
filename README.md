@@ -66,6 +66,6 @@ Colorlib - https://colorlib.com/
 CoolAdmin - https://github.com/puikinsh/CoolAdmin  
 Hatchful - generating logo images - https://hatchful.shopify.com/  
 
-Changelog 1.5 -> 1.6
-Properly imported Eclipse project into Github
-Removed multiple sources of dead code
+Changelog 1.5 -> 1.6  
+Properly imported Eclipse project into Github  
+Removed multiple sources of dead code  
